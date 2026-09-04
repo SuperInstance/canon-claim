@@ -1,0 +1,32 @@
+{
+  "name": "@superinstance/canon-claim",
+  "version": "0.1.0",
+  "description": "A thin client for the Live Canon CLAIM + DRILL endpoints (https://live-canon.superinstance.dev). Find the most-authoritative paper for a topic, or a 3-paper training curriculum.",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "quilt",
+    "live-canon",
+    "rag",
+    "llm",
+    "ai-writings",
+    "claim",
+    "drill"
+  ],
+  "author": "Casey Digennaro <superinstance@users.noreply.github.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SuperInstance/canon-claim.git"
+  },
+  "homepage": "https://live-canon.superinstance.dev",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
