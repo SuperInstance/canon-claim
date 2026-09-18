@@ -6,7 +6,7 @@ state: active
 family: canon
 vessel: unattributed
 born_from: []
-feeds: []
+feeds: [quilt-canvas-demo]
 owed_by: []
 canonical_docs: [README.md]
 ledger: git-log
