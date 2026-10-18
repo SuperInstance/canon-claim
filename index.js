@@ -39,7 +39,17 @@ async function stateHash(options = {}) {
 
 async function paperCount(options = {}) {
   const data = await canonFetch(options.base, '/api/canon', {});
-  return Object.keys(data).length;
+  // The live service changed the SHAPE of /api/canon: it used to return a
+  // MAP of papers keyed by id, and it now returns a LIST under a
+  // `papers` key. `Object.keys(data).length` on the new shape counts
+  // the TOP-LEVEL keys -- 2 -- and not the papers, so this function
+  // reported 2 while 71 papers were sitting there in `data.papers`.
+  //
+  // Counting the papers is the whole point of the function, so it has
+  // to count PAPERS.
+  if (Array.isArray(data)) return data.length;
+  if (Array.isArray(data && data.papers)) return data.papers.length;
+  return Object.keys(data || {}).length;
 }
 
 module.exports = { claim, drill, stateHash, paperCount, DEFAULT_BASE };
