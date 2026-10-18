@@ -1,0 +1,24 @@
+name: test
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # The OFFLINE test is the gate.  No network, so it cannot flake.
+      - name: Client behaviour (offline)
+        run: node test/offline.test.js
+
+      # The LIVE test is a monitor: it records what the service
+      # actually deploys, and goes red if that changes.
+      - name: Live Canon service (monitor)
+        run: node test/live.test.js

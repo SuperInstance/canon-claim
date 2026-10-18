@@ -9,7 +9,9 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node test/offline.test.js && node test/live.test.js",
+    "test:offline": "node test/offline.test.js",
+    "test:live": "node test/live.test.js"
   },
   "keywords": [
     "quilt",
