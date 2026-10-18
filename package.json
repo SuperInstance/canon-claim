@@ -1,6 +1,6 @@
 {
   "name": "@superinstance/canon-claim",
-  "version": "0.1.3",
+  "version": "0.1.2",
   "description": "A thin client for the Live Canon CLAIM + DRILL endpoints (https://live-canon.superinstance.dev). Find the most-authoritative paper for a topic, or a 3-paper training curriculum.",
   "main": "index.js",
   "files": [
